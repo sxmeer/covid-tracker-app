@@ -17,7 +17,7 @@ function App() {
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState("cases");
   const [mapCenter, setMapCenter] = useState([34.80746, -40.4796]);
-  const [mapZoom, setMapZoom] = useState(3);
+  const [mapZoom, setMapZoom] = useState(6);
 
   const loadCountryInfo = async (selectedCountryCode = "worldwide") => {
     const url = selectedCountryCode === 'worldwide' ?
@@ -31,7 +31,7 @@ function App() {
         let mapCenter = selectedCountryCode === 'worldwide' ? [34.80746, -40.4796] : [data.countryInfo.lat, data.countryInfo.long]
         log(`map center==>${selectedCountryCode}`, mapCenter)
         setMapCenter(mapCenter)
-        let mapZoom = selectedCountryCode === 'worldwide' ? 2 : 3;
+        let mapZoom = selectedCountryCode === 'worldwide' ? 2 : 6;
         log(`map zoom==>${selectedCountryCode}`, mapZoom);
         setMapZoom(mapZoom);
       });
